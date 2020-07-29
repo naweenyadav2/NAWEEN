@@ -1,0 +1,19 @@
+ID: NAW_PROJ1
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: NAW_DB1
+   type: hdb
+   path: NAW_DB1
+   requires:
+    - name: hdi_NAW_DB1
+
+resources:
+ - name: hdi_NAW_DB1
+   parameters:
+      config:
+         schema: NAW_SCHEMA1
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
